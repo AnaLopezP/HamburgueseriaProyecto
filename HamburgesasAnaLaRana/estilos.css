@@ -22,7 +22,7 @@ header, footer {
 }
 
 header {
-    background-color: rgb(86,52,155); /* Rojo oscuro */
+    background-color: rgb(40, 66, 1); /* Rojo oscuro */
     color: #fff;
     padding: 10px;
     text-align: center;
@@ -65,7 +65,7 @@ li {
 
 a {
     text-decoration: none;
-    color: #56349b; /* Morado oscuro */
+    color: #3b7c49; /* Morado oscuro */
     font-weight: bold;
     font-size: 16px;
     transition: color 0.3s ease;
@@ -79,7 +79,7 @@ a:hover {
 footer {
     border-radius: 10px; /* Bordes más redondos */
     color: #fff;
-    background-color: #5e3b7c; /* Morado más oscuro */
+    background-color: rgb(40, 66, 1); /* verde más oscuro */
     text-align: center;
     padding: 10px;
     max-width: 1200px; /* Ancho máximo del elemento */
@@ -90,7 +90,7 @@ footer {
 
 /* Estilo adicional para la caja de comentarios */
 #comentario-box {
-    background-color: #ff6961; /* Rojo */
+    background-color: #60a04c;
     color: #fff; /* Texto blanco */
     padding: 10px;
     border-radius: 10px;
@@ -118,7 +118,7 @@ fieldset {
 
 legend {
     font-weight: bold;
-    color: rgb(206 43 55);
+    color: #4c7c3b;
     margin-bottom: 10px;
 }
 
@@ -150,7 +150,7 @@ input[type="submit"]:hover {
 }
 
 #creatupizza, #creatucombo, #combosALA {
-    background-color: rgb(206 43 55);
+    background-color: rgb(40, 66, 1);
     color: #fff;
     padding: 12px 24px; /* Ajuste del tamaño del botón */
     border: none;
@@ -163,10 +163,11 @@ input[type="submit"]:hover {
 /* Estilos de inicio de sesion */
 #login-box {
     border: 1px solid #ddd;
+    width: 70%;
+    margin: 20px auto 70px;
     border-radius: 10px;
     padding: 20px;
-    margin: 20px 20px 70px;
-    background-color: rgb(242, 242, 242, 0.5); /* Morado oscuro */
+    background-color: rgba(242, 242, 242, 0.5); /* Morado oscuro */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 #login-box h2 {
@@ -190,7 +191,7 @@ input[type="submit"]:hover {
 }
 
 #login-box button {
-    background-color: #5e3b7c; /* Morado más oscuro */
+    background-color: #4c7c3b;
     color: #fff;
     padding: 10px;
     border: none;
@@ -208,7 +209,8 @@ input[type="submit"]:hover {
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 20px;
-    margin: 20px 20px 70px;
+    width: 70%;
+    margin: 20px auto 70px;
     background-color: rgba(255, 255, 255, 0.788);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -271,6 +273,7 @@ h1 {
     background-color: #fff; /* Color de fondo blanco */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    
 }
 
 .combo:hover {
@@ -336,7 +339,7 @@ h1 {
 }
 /* Estilo para el comentario */
 .precio-combos {
-    background-color: #ff6961; /* Rojo */
+    background-color: #60a04c;
     color: #fff; /* Texto blanco */
     padding: 10px;
     border-radius: 10px;
