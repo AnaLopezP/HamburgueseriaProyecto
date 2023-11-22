@@ -60,7 +60,7 @@ function añadir_al_carrito(){
     event.preventDefault(); // Evita que el formulario se envíe de manera convencional
 
     // Crea un diccionario con los elementos seleccionados
-    var pedido = {
+    let pedido = {
         entrante: obtenerValorSeleccionado('entrante'),
         burger: obtenerValorSeleccionado('burger'),
         bebida: obtenerValorSeleccionado('bebida'),
@@ -69,7 +69,7 @@ function añadir_al_carrito(){
     };
 
     // Recupera el carrito de pedidos existente o crea uno nuevo si no existe
-    var carrito = JSON.parse(localStorage.getItem('carrito_pedidos')) || [];
+    let carrito = JSON.parse(localStorage.getItem('carrito_pedidos')) || [];
 
     // Agrega el nuevo pedido al carrito
     carrito.push(pedido);
@@ -85,7 +85,7 @@ function añadir_al_carrito(){
 // Función para obtener el valor seleccionado de un grupo de radio buttons
 function obtenerValorSeleccionado(nombreGrupo) {
     let opciones = document.getElementsByName(nombreGrupo);
-    for (var i = 0; i < opciones.length; i++) {
+    for (let i = 0; i < opciones.length; i++) {
         if (opciones[i].checked) {
             return opciones[i].value;
         }
