@@ -24,14 +24,14 @@
 
         <div id="login-box">
             <h2>Iniciar Sesión o Registrarse</h2>
-            <form id="registro-form" onsubmit="return iniciarSesion()">
+            <form id="login-form" onsubmit="return iniciarSesion()">
                 <label for="nombre">Usuario:</label>
                 <input type="text" id="nombre" name="nombre" required>
 
                 <label for="contrasena">Contraseña:</label>
-                <input type="contrasena" id="contrasena" name="contrasena" required>
+                <input type="password" id="contrasena" name="contrasena" required>
 
-                <button type="button" onclick="iniciarSesion()">Iniciar Sesion</button>
+                <button type="submit" >Iniciar Sesion</button>
             </form>
 
             <p>¿No tienes una cuenta? <a href="registraruser.html">Regístrate</a></p>
@@ -43,7 +43,7 @@
     <script>
         document.getElementById('login-form').addEventListener('submit', function (event) {
             event.preventDefault(); // Evita que el formulario se envíe de manera convencional
-
+            alert("hola");
             // Llama a la función iniciarSesion
             iniciarSesion();
         });

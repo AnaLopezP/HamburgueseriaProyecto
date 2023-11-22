@@ -1,9 +1,11 @@
-let usuarios_registrados = []
+let usuarios_registrados = JSON.parse(localStorage.getItem('usuarios_registrados')) || [];
+
 
 function iniciarSesion() {
+    alert("Iniciando sesión...")
     let nombre = document.getElementById('nombre').value;
     let contrasena = document.getElementById('contrasena').value;
-    if (confirmarContrasena === contrasena) {
+    if (usuarios_registrados.contrasena === contrasena) {
     
         let usuarioEncontrado = usuarios_registrados.find(function (usuario) {
             return usuario.nombre === nombre && usuario.contrasena === contrasena;
@@ -43,8 +45,9 @@ function registrarUsuario() {
                 telefono: telefono,
                 contrasena: contrasena,
             });
+            alert(usuarios_registrados[0])
             alert('¡Registro exitoso!');
-            window.location.href = 'index_conuser.html';
+            window.location.href = 'index.html';
         }
     }
 }
