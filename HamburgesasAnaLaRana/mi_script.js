@@ -55,11 +55,7 @@ function registrarUsuario() {
 }
 
 function añadir_al_carrito(){
-    // Agrega un evento al formulario para manejar el envío del pedido
-    document.getElementById('pedidoForm').addEventListener('submit', function (event) {
-    event.preventDefault(); // Evita que el formulario se envíe de manera convencional
-
-    // Crea un diccionario con los elementos seleccionados
+     // Crea un diccionario con los elementos seleccionados
     let pedido = {
         entrante: obtenerValorSeleccionado('entrante'),
         burger: obtenerValorSeleccionado('burger'),
@@ -79,8 +75,8 @@ function añadir_al_carrito(){
     alert('Pedido añadido al carrito.');
 
     window.location.href = 'index_conuser.html';
-    });
-}
+    };
+
 
 // Función para obtener el valor seleccionado de un grupo de radio buttons
 function obtenerValorSeleccionado(nombreGrupo) {

@@ -11,7 +11,7 @@
 <body>
     <h1 id = "creatupizza">Crea tu propia Pizza</h1>
     <p id = "comentario-box">Todas las pizzas personalizadas valen 12.99€</p>
-    <form action="/form" method="post">
+    <form id = "pedidoForm">
 
         <fieldset>
             <legend>Masa</legend>
@@ -113,5 +113,11 @@
     <footer>
         <p>¿Tiene alguna pregunta? Llame al siguiente número: 666 666 666</p>
     </footer>
-    
+    <script>
+        document.getElementById('pedidoForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Evita que el formulario se envíe de manera convencional
+            alert("Pedido enviado al carrito"); // Agregamos un log para verificar que se está ejecutando este código
+            añadir_al_carrito();
+        });
+    </script>
 </body>
