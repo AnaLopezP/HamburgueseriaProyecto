@@ -1,0 +1,345 @@
+/* Reset de estilos */
+body, h1, h2, ul, li, p, textarea, input {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background: url('/static/images/logo4.jpeg') center center no-repeat; /* Centra la imagen y evita la repetición */
+    background-size: auto 100%; /* Ajusta el tamaño vertical al 70%, puedes ajustar este valor según tus necesidades */
+    background-attachment: fixed; /* Fija la imagen para que no se mueva al hacer scroll */
+    background-color: rgb(0 146 70); /* Color de fondo verde */
+    color: #333;
+    border-radius: 50%;
+}
+
+header, footer {
+    max-width: 1200px; /* Ancho máximo del elemento */
+    margin: 0 auto; /* Centra el elemento en el espacio restante horizontalmente */
+    border-radius: 10px; /* Bordes más redondos */
+
+}
+
+header {
+    background-color: rgb(206 43 55);
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+main {
+    margin: 20px;
+}
+
+section#Menu {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px; /* Bordes más redondos */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex; /* Hacer que los elementos internos sean flexibles */
+    justify-content: space-between; /* Espacio entre los elementos flexibles */
+    align-items: center; /* Centrar los elementos flexibles */
+}
+
+section#Menu h2 {
+    color: rgb(0, 0, 0);
+    margin-bottom: 10px;
+    
+}
+
+ul {
+    list-style: none;
+}
+
+menu-links {
+    display: flex; /* Hacer que los enlaces sean flexibles */
+    align-items: center; /* Centrar verticalmente los enlaces */
+}
+
+li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(206 43 55);
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #333;
+}
+
+footer {
+    border-radius: 10px; /* Bordes más redondos */
+    color: rgb(255 255 255);
+    background-color: rgb(206 43 55);
+    text-align: center;
+    padding: 10px;
+    max-width: 1200px; /* Ancho máximo del elemento */
+    margin: 0 auto; /* Centra el elemento en el espacio restante horizontalmente */
+}
+
+/* Estilos específicos para el formulario */
+
+/* Estilo adicional para la caja de comentarios */
+#comentario-box {
+    background-color: #ff6961; /* Rojo */
+    color: #fff; /* Texto blanco */
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+form {
+    background: rgba(255, 255, 255, 0.5); /* Fondo blanco con 70% de opacidad */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+
+
+fieldset {
+    margin-bottom: 20px;
+    border: 0; /* Elimina el borde del fieldset */
+    padding: 15px;
+    border-radius: 15px;
+    background-color: #fff; /* Color de fondo blanco */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+legend {
+    font-weight: bold;
+    color: rgb(206 43 55);
+    margin-bottom: 10px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 8px; /* Espacio entre los radio y checkbox */
+}
+
+textarea {
+    width: 90%; /* Ajusta el ancho del textarea al 90% */
+    padding: 10px;
+    border: 2px solid #ddd; /* Borde más grueso */
+    border-radius: 15px; /* Bordes más redondos */
+    margin-bottom: 15px; /* Más espacio en la parte inferior */
+}
+
+input[type="submit"] {
+    background-color: rgb(0 146 70);
+    color: #fff;
+    padding: 12px 24px; /* Ajuste del tamaño del botón */
+    border: none;
+    border-radius: 15px; /* Bordes más redondos */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #333;
+}
+
+#creatupizza, #creatucombo, #combosALA {
+    background-color: rgb(206 43 55);
+    color: #fff;
+    padding: 12px 24px; /* Ajuste del tamaño del botón */
+    border: none;
+    border-radius: 15px; /* Bordes más redondos */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center; /* Centro horizontal del texto */
+}
+
+/* Estilos de inicio de sesion */
+#login-box {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 20px 70px;
+    background-color: rgba(255, 255, 255, 0.788);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#login-box h2 {
+    color: #333;
+}
+
+#login-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+#login-box label {
+    margin-bottom: 5px;
+}
+
+#login-box input {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#login-box button {
+    background-color: rgb(0 146 70);
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#login-box button:hover {
+    background-color: #333;
+}
+
+/* Estilos específicos para el formulario de registro */
+#registro-box {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 20px 70px;
+    background-color: rgba(255, 255, 255, 0.788);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#registro-box h2 {
+    color: #333;
+}
+
+#registro-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+#registro-box label {
+    margin-bottom: 5px;
+}
+
+#registro-box input {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#registro-box button {
+    background-color: rgb(0, 146, 70);
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#registro-box button:hover {
+    background-color: #333;
+}
+
+#registro-box p {
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Estilos específicos para los combos Ana la Rana*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px; /* Añadimos un margen inferior al título */
+}
+
+.combo {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+    background-color: #fff; /* Color de fondo blanco */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.combo:hover {
+    background-color: rgb(124, 205, 211);
+}
+
+.combo h2 {
+    color: rgb(3, 39, 20);
+}
+
+.combo ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.combo li {
+    margin-bottom: 5px;
+}
+.combo {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+#enviarBtn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.combo {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.combo label {
+    cursor: pointer;
+    display: block;
+    padding: 10px;
+}
+
+.combo input {
+    display: none;
+}
+
+.combo input:checked + label {
+    background-color: rgb(124, 205, 211)
+}
+
+#enviarBtn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+/* Estilo para el comentario */
+.precio-combos {
+    background-color: #ff6961; /* Rojo */
+    color: #fff; /* Texto blanco */
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
