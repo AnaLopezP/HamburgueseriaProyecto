@@ -347,14 +347,8 @@ h1 {
     text-align: center;
 }
 
-#usuario-y-carrito {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-right: 20px; /* Ajusta el espacio del borde derecho */
-    font-size: 16px;
-}
-
 #carrito {
-    margin-left: 20px; /* Ajusta el espacio del carrito con respecto al nombre de usuario */
+    margin-left: 20px;
+    font-size: 64px;
+    float: right;
 }

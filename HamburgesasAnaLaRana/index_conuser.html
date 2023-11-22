@@ -11,10 +11,9 @@
 <body>
     <header>
         <h1 id="hamburguesasAnaLaRana">Hamburguesas Ana la Rana</h1>
-
+        <script src = "mi_script.js"></script>
         <!-- Agregamos la sección para el nombre de usuario y el carrito -->
-        <div id="usuario-y-carrito">
-            <span id="nombre-usuario">Nombre de Usuario</span>
+        <div>
             <a href="carrito.html" id="carrito">🛒</a>
         </div>
     </header>
@@ -24,7 +23,7 @@
             <ul>
                 <li id="Personalizado"><a href="burgermenu.html">Menús personalizados</a></li>
                 <li id="Combos Ana la Rana"><a href="combosALA.html">Combos Ana la Rana</a></li>
-                <li id="Crea tu pizza"><a href="creatuburger.html">Crea tu Hamnurguesa</a></li>
+                <li id="Crea tu pizza"><a href="creatuburger.html">Crea tu Hamburguesa</a></li>
             </ul>
         </section>
 
@@ -35,14 +34,5 @@
     <footer>
         <p>¿Tiene alguna pregunta? Llame al siguiente número: 666 666 666</p>
     </footer>
-    <script>
-        // Obtener el nombre de usuario desde la sesión local
-        var nombreUsuario = localStorage.getItem('nombreUsuario');
-
-        // Actualizar el contenido del elemento con el id "nombre-usuario"
-        if (nombreUsuario) {
-            document.getElementById('nombre-usuario').textContent = nombreUsuario;
-        }
-    </script>
 </body>
 </html>
