@@ -24,14 +24,14 @@
 
         <div id="login-box">
             <h2>Iniciar Sesión o Registrarse</h2>
-            <form id="login-form" onsubmit = "return iniciarSesion()">
+            <form id="registro-form" onsubmit="return iniciarSesion()">
                 <label for="username">Usuario:</label>
                 <input type="text" id="username" name="username" required>
 
                 <label for="password">Contraseña:</label>
                 <input type="password" id="password" name="password" required>
 
-                <button type="submit">Iniciar Sesión</button>
+                <button type="button" onclick="iniciarSesion()">Iniciar Sesion</button>
             </form>
 
             <p>¿No tienes una cuenta? <a href="registraruser.html">Regístrate</a></p>
