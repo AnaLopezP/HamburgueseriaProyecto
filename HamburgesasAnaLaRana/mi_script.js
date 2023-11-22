@@ -1,6 +1,6 @@
 let usuarios_registrados = []
 
-function verificarInicioSesion() {
+function iniciarSesion() {
     let username = document.getElementById('username').value;
     let password = document.getElementById('password').value;
 
@@ -11,6 +11,7 @@ function verificarInicioSesion() {
 
     if (usuarioEncontrado) {
         alert('¡Inicio de sesión exitoso!');
+        window.location.href = 'index_conuser.html';
     } else {
         alert('Error de inicio de sesión. Verifica tus credenciales.');
     }
