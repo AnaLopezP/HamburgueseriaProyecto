@@ -1,19 +1,20 @@
 let usuarios_registrados = []
 
 function iniciarSesion() {
-    let username = document.getElementById('username').value;
-    let password = document.getElementById('password').value;
+    let nombre = document.getElementById('nombre').value;
+    let contrasena = document.getElementById('contrasena').value;
+    if (confirmarContrasena === contrasena) {
+    
+        let usuarioEncontrado = usuarios_registrados.find(function (usuario) {
+            return usuario.nombre === nombre && usuario.contrasena === contrasena;
+        });
 
-    // Verificar las credenciales
-    let usuarioEncontrado = usuarios_registrados.find(function (usuario) {
-        return usuario.username === username && usuario.password === password;
-    });
-
-    if (usuarioEncontrado) {
-        alert('¡Inicio de sesión exitoso!');
-        window.location.href = 'index_conuser.html';
-    } else {
-        alert('Error de inicio de sesión. Verifica tus credenciales.');
+        if (usuarioEncontrado) {
+            alert('¡Inicio de sesión exitoso!');
+            window.location.href = 'index_conuser.html';
+        } else {
+            alert('Error de inicio de sesión. Verifica tus credenciales.');
+        }
     }
 }
 
