@@ -1,98 +1,101 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Pizzería Ana la Rana">
-    <title>Pizzeria Ana la Rana</title>
+    <meta name="description" content="Hamburguesería Ana la Rana">
+    <title>Hamburguesería Ana la Rana</title>
     <link rel="stylesheet" href="estilos.css">
-    <style>
-        
-    </style>
 </head>
+
 <body>
 
-    <h1 id = "combosALA">Combos de Pizza</h1>
+    <h1 id="combosALA">Combos de Hamburguesas</h1>
 
     <div class="precio-combos">
-        Todos los combos valen 12.99€
+        Todos los combos valen 9.99€
     </div>
 
     <form action="/form_comboALA" method="post">
         <div class="combo">
-            <input type="radio" name = "combo_nombre" value="comboPareja" id="comboPareja">
-            <label for="comboPareja">
-                <h2>Combo Pareja</h2>
+            <input type="radio" name="combo_nombre" value="comboClasico" id="comboClasico">
+            <label for="comboClasico">
+                <h2>Combo Clásico</h2>
                 <ul>
-                    <li>Entrante: Mozarella Sticks</li>
-                    <li>Pizza: Pizza de Pepperoni</li>
+                    <li>Hamburguesa: Clásica con Queso</li>
+                    <li>Acompañamiento: Patatas Fritas</li>
                     <li>Bebida: Refresco de cola</li>
+                    <li>Postre: Helado</li>
+                </ul>
+            </label>
+        </div>
+
+        <div class="combo">
+            <input type="radio" name="combo_nombre" value="comboVegetariano" id="comboVegetariano">
+            <label for="comboVegetariano">
+                <h2>Combo Vegetariano</h2>
+                <ul>
+                    <li>Hamburguesa: Vegetariana</li>
+                    <li>Acompañamiento: Ensalada</li>
+                    <li>Bebida: Té helado</li>
+                    <li>Postre: Brownie</li>
+                </ul>
+            </label>
+        </div>
+
+        <div class="combo">
+            <input type="radio" name="combo_nombre" value="comboDobleCarne" id="comboDobleCarne">
+            <label for="comboDobleCarne">
+                <h2>Combo Doble Carne</h2>
+                <ul>
+                    <li>Hamburguesa: Doble Carne completa</li>
+                    <li>Acompañamiento: Papas Fritas</li>
+                    <li>Bebida: Coca-Cola</li>
+                    <li>Postre: Tarta de Manzana</li>
+                </ul>
+            </label>
+        </div>
+
+        <div class="combo">
+            <input type="radio" name="combo_nombre" value="comboPollo" id="comboPollo">
+            <label for="comboPollo">
+                <h2>Combo de Pollo</h2>
+                <ul>
+                    <li>Hamburguesa: Pollo a la Parrilla</li>
+                    <li>Acompañamiento: Anillos de Cebolla</li>
+                    <li>Bebida: Limonada</li>
+                    <li>Postre: Helado de Vainilla</li>
+                </ul>
+            </label>
+        </div>
+
+        <div class="combo">
+            <input type="radio" name="combo_nombre" value="comboEspecial" id="comboEspecial">
+            <label for="comboEspecial">
+                <h2>Combo Especial</h2>
+                <ul>
+                    <li>Hamburguesa: Especial de la Casa</li>
+                    <li>Acompañamiento: Papas Fritas</li>
+                    <li>Bebida: Batido de Chocolate</li>
                     <li>Postre: Tiramisú</li>
                 </ul>
             </label>
         </div>
 
         <div class="combo">
-            <input type="radio" name = "combo_nombre"  value="comboNavidad" id="comboNavidad">
-            <label for = "comboNavidad">
-                <h2>Combo Navidad (Por Tiempo Limitado)</h2>
-                <ul>
-                    <li>Entrante: Ensalada Navideña</li>
-                    <li>Pizza: Pizza Festiva</li>
-                    <li>Bebida: Ponche de Frutas</li>
-                    <li>Postre: Tronco de Navidad</li>
-                </ul>
-            </label>
-        </div>
-
-        <div class="combo">
-            <input type="radio" name = "combo_nombre"  value="comboSoloPizza" id="comboSoloPizza">
-            <label for="comboSoloPizza">
-                <h2>Combo Solo-Pizza</h2>
-                <ul>
-                    <li>Pizza: Pizza Margarita</li>
-                    <li>Pizza: Pizza de Jamón y Queso</li>
-                </ul>
-            </label>
-        </div>
-
-        <div class="combo">
-            <input type="radio" name = "combo_nombre"  value="ComboEntrantes" id="ComboEntrantes">
-            <label for="ComboEntrantes">
-                <h2>Combo Entrantes a Tutiplén</h2>
-                <ul>
-                    <li>Entrante: Palitos de Queso</li>
-                    <li>Entrante: Deditos de Pollo</li>
-                    <li>Entrante: Aros de Cebolla</li>
-                    <li>Bebida: Agua</li>
-                </ul>
-            </label>
-        </div>
-
-        <div class="combo">
-            <input type="radio" name = "combo_nombre"  value="comboDulce" id="comboDulce">
-            <label for="comboDulce">
-                <h2>Combo Dulce</h2>
-                <ul>
-                    <li>Pizza: Pizza de Nutella y Plátano</li>
-                    <li>Postre: Brownie con Helado</li>
-                    <li>Bebida: Batido de Chocolate</li>
-                </ul>
-            </label>
-        </div>
-
-        <div class="combo">
-            <input type="radio" name = "combo_nombre"  value="comboPicante" id="comboPicante">
+            <input type="radio" name="combo_nombre" value="comboPicante" id="comboPicante">
             <label for="comboPicante">
                 <h2>Combo Picante</h2>
                 <ul>
-                    <li>Entrante: Jalapeños Rellenos</li>
-                    <li>Pizza: Pizza Picante de Pollo</li>
-                    <li>Bebida: Cerveza Mexicana</li>
+                    <li>Hamburguesa: Picante con Jalapeños</li>
+                    <li>Acompañamiento: Palitos de Zanahoria</li>
+                    <li>Bebida: Agua Mineral</li>
                     <li>Postre: Sorbete de Limón</li>
                 </ul>
             </label>
         </div>
-        <button id="enviarBtn" type = "submit">Enviar Pedido</button>
+        <button id="enviarBtn" type="submit">Enviar Pedido</button>
     </form>
 </body>
+
 </html>
