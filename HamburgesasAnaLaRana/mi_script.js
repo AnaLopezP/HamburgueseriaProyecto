@@ -1,22 +1,19 @@
-let usuarios_registrados = JSON.parse(localStorage.getItem('usuarios_registrados')) || [];
-
 
 function iniciarSesion() {
     alert("Iniciando sesión...")
+    
+    // Obtener las credenciales del formulario
     let nombre = document.getElementById('nombre').value;
     let contrasena = document.getElementById('contrasena').value;
-    if (usuarios_registrados.contrasena === contrasena) {
-    
-        let usuarioEncontrado = usuarios_registrados.find(function (usuario) {
-            return usuario.nombre === nombre && usuario.contrasena === contrasena;
-        });
 
-        if (usuarioEncontrado) {
-            alert('¡Inicio de sesión exitoso!');
-            window.location.href = 'index_conuser.html';
-        } else {
-            alert('Error de inicio de sesión. Verifica tus credenciales.');
-        }
+    // Obtener el usuario registrado desde localStorage
+    let usuarioRegistrado = JSON.parse(localStorage.getItem('usuarioActual'));
+
+    if (usuarioRegistrado && usuarioRegistrado.contrasena === contrasena && usuarioRegistrado.nombre === nombre) {
+        alert('¡Inicio de sesión exitoso!');
+        window.location.href = 'index_conuser.html';
+    } else {
+        alert('Error de inicio de sesión. Verifica tus credenciales.');
     }
 }
 
@@ -38,14 +35,17 @@ function registrarUsuario() {
             alert('El nombre de usuario ya está en uso. Por favor, elige otro.');
         } else {
             // Agregar nuevo usuario al array
-            usuarios_registrados.push({
+            let nuevoUsuario = {
                 nombre: nombre,
                 email: correo,
                 direccion: direccion,
                 telefono: telefono,
                 contrasena: contrasena,
-            });
-            alert(usuarios_registrados[0])
+            };
+
+            // Guardar el nuevo usuario en localStorage
+            localStorage.setItem('usuarioActual', JSON.stringify(nuevoUsuario));
+
             alert('¡Registro exitoso!');
             window.location.href = 'index.html';
         }
