@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="description" content="Registro de Usuario">
     <title>Registro de Usuario</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+    <link rel="stylesheet" href="estilos.css">
 </head>
 
 <body>
@@ -15,7 +15,7 @@
     <main>
         <section id="registro-box">
             <h2>Registrarse</h2>
-            <form action="/registro" method="post">
+            <form id = "registro-form">
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required>
             
@@ -34,7 +34,7 @@
                 <label for="confirmar_contrasena">Confirmar contraseña:</label>
                 <input type="password" id="confirmar_contrasena" name="confirmar_contrasena" required>
             
-                <input type="submit" value="Registrarse">
+                <button type="button" onclick="registrarUsuario()">Registrarse</button>
             </form>
 
             <p>¿Ya tienes una cuenta? <a href="/home">Inicia sesión</a></p>

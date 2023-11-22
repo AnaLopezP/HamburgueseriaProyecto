@@ -17,11 +17,15 @@ function verificarInicioSesion(lista_usuarios) {
 }
 
 function registrarUsuario(lista_usuarios) {
-    var newUsername = document.getElementById('newUsername').value;
-    var newPassword = document.getElementById('newPassword').value;
-
+    let nombre = document.getElementById('nombre').value;
+    let correo = document.getElementById('correo').value;
+    let direccion = document.getElementById('direccion').value;
+    let telefono = document.getElementById('telefono').value;
+    let contrasena = document.getElementById('contrasena').value;
+    let confirmarContrasena = document.getElementById('confirmar_contrasena').value;
+    
     // Verificar si el usuario ya existe
-    var usuarioExistente = lista_usuarios.find(function (usuario) {
+    let usuarioExistente = lista_usuarios.find(function (usuario) {
         return usuario.username === newUsername;
     });
 
@@ -29,7 +33,13 @@ function registrarUsuario(lista_usuarios) {
         alert('El nombre de usuario ya está en uso. Por favor, elige otro.');
     } else {
         // Agregar nuevo usuario al array
-        lista_usuarios.push({ username: newUsername, password: newPassword });
+        lista_usuarios.push({
+            nombre: nombre,
+            email: correo,
+            direccion: direccion,
+            telefono: telefono,
+            contrasena: contrasena,
+        });
         alert('¡Registro exitoso!');
     }
 }
