@@ -1,3 +1,5 @@
+let usuarios_registrados = JSON.parse(localStorage.getItem('usuarios_registrados')) || [];
+
 
 function iniciarSesion() {
     alert("Iniciando sesión...")
