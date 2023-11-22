@@ -93,7 +93,6 @@ function añadir_al_carrito_combos() {
     // Crea un diccionario con los elementos seleccionados
     let pedido = {
         combo: obtenerValorSeleccionado('combo_nombre'),
-        comentarios: document.querySelector('textarea[name="comentarios"]').value
     };
 
     // Recupera el carrito de pedidos existente o crea uno nuevo si no existe
