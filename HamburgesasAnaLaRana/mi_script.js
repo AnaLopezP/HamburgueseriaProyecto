@@ -22,7 +22,6 @@ function registrarUsuario(lista_usuarios) {
     let direccion = document.getElementById('direccion').value;
     let telefono = document.getElementById('telefono').value;
     let contrasena = document.getElementById('contrasena').value;
-    let confirmarContrasena = document.getElementById('confirmar_contrasena').value;
     
     // Verificar si el usuario ya existe
     let usuarioExistente = lista_usuarios.find(function (usuario) {
