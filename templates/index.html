@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Hamburguesas Ana la Rana">
+    <title>Pizzería Ana la Rana</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+
+</head>
+
+<body>
+    <header>
+        <h1 id = "Hamburgesas Ana la Rana">Hamburgesas Ana la Rana</h1>
+    </header>
+    <main>
+        <section id = "Menu">
+            <h2 id = "titMenu">Menú</h2>
+            <ul>
+                <li id = "Personalizado"><a href="{{ url_for('burgermenu') }}">Menús personalizados</a></li>
+                <li id = "Combos Ana la Rana"><a href="{{ url_for('combosALA') }}">Combos Ana la Rana</a></li>
+                <li id = "Crea tu hamburgesa"><a href="{{ url_for('burgercreativa') }}">Crea tu Hamburguesa</a></li>
+            </ul>
+        </section>
+
+        <div id="login-box">
+            <h2>Iniciar Sesión o Registrarse</h2>
+            <form action="/iniciar_sesion" method="post">
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit" href = "/iniciar_sesion">Iniciar Sesión</button>
+            </form>
+
+            <p>¿No tienes una cuenta? <a href="/registrar_usuario">Regístrate</a></p>
+        </div>
+    </main>
+    <footer>
+        <p>¿Tiene alguna pregunta? Llame al siguiente número: 666 666 666</p>
+    </footer>
+</body>

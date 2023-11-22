@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Pizzería Ana la Rana">
+    <title>Pizzería Ana la Rana</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+
+<body>
+    <h1 id = "creatupizza">Crea tu propia Pizza</h1>
+    <p id = "comentario-box">Todas las pizzas personalizadas valen 12.99€</p>
+    <form action="/form" method="post">
+
+        <fieldset>
+            <legend>Masa</legend>
+            <p>Seleccione el tipo de masa que desee:</p>
+            <input type="radio" name="masa" value="Masa normal">Masa normal<br>
+            <input type="radio" name="masa" value="Masa fina">Masa fina<br>
+            <input type="radio" name="masa" value="Masa gruesa">Masa gruesa<br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Salsa</legend>
+            <p>Seleccione la salsa que desee:</p>
+            <input type="radio" name="salsa" value="Salsa de tomate">Salsa de tomate<br>
+            <input type="radio" name="salsa" value="Salsa barbacoa">Salsa barbacoa<br>
+            <input type="radio" name="salsa" value="Salsa pesto">Salsa pesto<br>
+            <input type="radio" name="salsa" value="Salsa carbonara">Salsa carbonara<br>
+            <input type="radio" name="salsa" value="Salsa de queso">Salsa de queso<br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Ingredientes</legend>
+            <p>Seleccione los ingredientes que desee:</p>
+            <input type="checkbox" name="ingredientes_jamon" value="Jamon">Jamon<br>
+            <input type="checkbox" name="ingredientes_queso" value="Queso">Queso<br>
+            <input type="checkbox" name="ingredientes_cebolla" value="Cebolla">Cebolla<br>
+            <input type="checkbox" name="ingredientes_aceitunas" value="Aceitunas">Aceitunas<br>
+            <input type="checkbox" name="ingredientes_champis" value="Champiñones">Champiñones<br>
+            <input type="checkbox" name="ingredientes_pimiento" value="Pimiento">Pimiento<br>
+            <input type="checkbox" name="ingredientes_pollo" value="Pollo">Pollo<br>
+            <input type="checkbox" name="ingredientes_atun" value="Atun">Atun<br>
+            <input type="checkbox" name="ingredientes_bacon" value="Bacon">Bacon<br>
+            <input type="checkbox" name="ingredientes_carne" value="Carne picada">Carne picada<br>
+            <input type="checkbox" name="ingredientes_salami" value="Salami">Salami<br>
+            <input type="checkbox" name="ingredientes_pepperoni" value="Pepperoni">Pepperoni<br>
+            <input type="checkbox" name="ingredientes_chorizo" value="Chorizo">Chorizo<br>
+            <input type="checkbox" name="ingredientes_anchoas" value="Anchoas">Anchoas<br>
+            <input type="checkbox" name="ingredientes_maiz" value="Maiz">Maiz<br>
+            <input type="checkbox" name="ingredientes_piña" value="Piña">Piña<br>
+            <input type="checkbox" name="ingredientes_rucula" value="Rucula">Rucula<br>
+            <input type="checkbox" name="ingredientes_albahaca" value="Albahaca">Albahaca<br>
+            <input type="checkbox" name="ingredientes_oregano" value="Oregano">Oregano<br>
+            <input type="checkbox" name="ingredientes_pimientopicante" value="Pimiento picante">Pimiento picante<br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Tecnica</legend>
+            <p>Seleccione el tipo de técnica que desee:</p>
+            <input type="radio" name="tecnica" value="Tecnica normal">Tecnica normal<br>
+            <input type="radio" name="tecnica" value="Tecnica voladora">Tecnica voladora<br>
+            <input type="radio" name="tecnica" value="Tecnica especial del chef">Tecnica especial del chef<br>
+            <input type="radio" name="tecnica" value="Tecnica supersayan">Tecnica supersayan<br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Presentacion</legend>
+            <p>Seleccione el tipo de presentación que desee:</p>
+            <input type="radio" name="presentacion" value="Presentacion normal">Presentacion normal<br>
+            <input type="radio" name="presentacion" value="Presentacion voladora">Presentacion voladora<br>
+            <input type="radio" name="presentacion" value="Presentacion especial del chef">Presentacion especial del chef<br>
+            <input type="radio" name="presentacion" value="Presentacion supersayan">Presentacion supersayan<br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Extra</legend>
+            <p>Seleccione un extra que desee:</p>
+            <input type="radio" name="extra" value="Sin extra">Sin extra<br>
+            <input type="radio" name="extra" value="Extra de queso">Extra de queso<br>
+            <input type="radio" name="extra" value="Extra de picante">Extra de picante<br>
+            <input type="radio" name="extra" value="Sorprendame">Sorprendame<br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Bebida</legend>
+            <p>Seleccione la bebida que desee:</p>
+            <input type="radio" name="bebida" value="Sin bebida">Sin bebida<br>
+            <input type="radio" name="bebida" value="cocacola">Coca-Cola<br>
+            <input type="radio" name="bebida" value="Agua">Agua<br>
+            <input type="radio" name="bebida" value="fantanaranja">Fanta Naranja<br>
+            <input type="radio" name="bebida" value="fantalimon">Fanta Limón<br>
+            <input type="radio" name="bebida" value="nestea">Nestea<br>
+            <input type="radio" name="bebida" value="sprite">Sprite<br>
+            <input type="radio" name="bebida" value="cerveza">Cerveza<br>
+            <input type="radio" name="bebida" value="vino">Vino<br>
+            <input type="radio" name="bebida" value="Sorprendame">Sorprendame<br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Postre</legend>
+            <p>Seleccione el postre que desee:</p>
+            <input type="radio" name="postre" value="Sin postre">Sin postre<br>
+            <input type="radio" name="postre" value="Tarta de queso">Tarta de queso<br>
+            <input type="radio" name="postre" value="Tarta de chocolate">Tarta de chocolate<br>
+            <input type="radio" name="postre" value="Tarta de manzana">Tarta de manzana<br>
+            <input type="radio" name="postre" value="Tarta de limon">Tarta de limon<br>
+            <input type="radio" name="postre" value="Tarta de fresa">Tarta de fresa<br>
+            <input type="radio" name="postre" value="Brownie">Brownie<br>
+            <input type="radio" name="postre" value="Helado">Helado<br>
+            <input type="radio" name="postre" value="Fruta">Fruta<br>
+            <input type="radio" name="postre" value="Sorprendame">Sorprendame<br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Comentarios</legend>
+            <p>Si tiene algún comentario, escribalo aquí:</p>
+            <textarea name="comentarios" rows="10" cols="30"></textarea>
+        </fieldset>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <footer>
+        <p>¿Tiene alguna pregunta? Llame al siguiente número: 666 666 666</p>
+    </footer>
+    
+</body>
