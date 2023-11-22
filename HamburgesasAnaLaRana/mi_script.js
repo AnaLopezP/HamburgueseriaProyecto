@@ -22,24 +22,27 @@ function registrarUsuario(lista_usuarios) {
     let direccion = document.getElementById('direccion').value;
     let telefono = document.getElementById('telefono').value;
     let contrasena = document.getElementById('contrasena').value;
+    let confirmarContrasena = document.getElementById('confirmar_contrasena').value;
+    if (confirmarContrasena === contrasena) {
     
-    // Verificar si el usuario ya existe
-    let usuarioExistente = lista_usuarios.find(function (usuario) {
-        return usuario.username === newUsername;
-    });
-
-    if (usuarioExistente) {
-        alert('El nombre de usuario ya está en uso. Por favor, elige otro.');
-    } else {
-        // Agregar nuevo usuario al array
-        lista_usuarios.push({
-            nombre: nombre,
-            email: correo,
-            direccion: direccion,
-            telefono: telefono,
-            contrasena: contrasena,
+        // Verificar si el usuario ya existe
+        let usuarioExistente = lista_usuarios.find(function (usuario) {
+            return usuario.username === newUsername;
         });
-        alert('¡Registro exitoso!');
+
+        if (usuarioExistente) {
+            alert('El nombre de usuario ya está en uso. Por favor, elige otro.');
+        } else {
+            // Agregar nuevo usuario al array
+            lista_usuarios.push({
+                nombre: nombre,
+                email: correo,
+                direccion: direccion,
+                telefono: telefono,
+                contrasena: contrasena,
+            });
+            alert('¡Registro exitoso!');
+        }
     }
 }
 
