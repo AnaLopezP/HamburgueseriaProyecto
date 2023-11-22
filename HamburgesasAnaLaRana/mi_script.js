@@ -54,7 +54,7 @@ function registrarUsuario() {
     }
 }
 
-function añadir_al_carrito(){
+function añadir_al_carrito_menu(){
      // Crea un diccionario con los elementos seleccionados
     let pedido = {
         entrante: obtenerValorSeleccionado('entrante'),
@@ -87,4 +87,24 @@ function obtenerValorSeleccionado(nombreGrupo) {
         }
     }
     return null; // En caso de que no haya ninguna opción seleccionada
+}
+
+function añadir_al_carrito_combos() {
+    // Crea un diccionario con los elementos seleccionados
+    let pedido = {
+        combo: obtenerValorSeleccionado('combo_nombre'),
+        comentarios: document.querySelector('textarea[name="comentarios"]').value
+    };
+
+    // Recupera el carrito de pedidos existente o crea uno nuevo si no existe
+    let carrito = JSON.parse(localStorage.getItem('carrito_pedidos')) || [];
+
+    // Agrega el nuevo pedido al carrito
+    carrito.push(pedido);
+
+    // Guarda el carrito actualizado en el localStorage
+    localStorage.setItem('carrito_pedidos', JSON.stringify(carrito));
+    alert('Pedido de combo añadido al carrito.');
+
+    window.location.href = 'index_conuser.html';
 }
