@@ -42,6 +42,7 @@ function registrarUsuario() {
                 contrasena: contrasena,
             });
             alert('¡Registro exitoso!');
+            window.location.href = 'index_conuser.html';
         }
     }
 }
