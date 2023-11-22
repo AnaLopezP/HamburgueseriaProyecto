@@ -1,11 +1,11 @@
 let usuarios_registrados = []
 
-function verificarInicioSesion(lista_usuarios) {
+function verificarInicioSesion() {
     let username = document.getElementById('username').value;
     let password = document.getElementById('password').value;
 
     // Verificar las credenciales
-    let usuarioEncontrado = lista_usuarios.find(function (usuario) {
+    let usuarioEncontrado = usuarios_registrados.find(function (usuario) {
         return usuario.username === username && usuario.password === password;
     });
 
@@ -16,7 +16,7 @@ function verificarInicioSesion(lista_usuarios) {
     }
 }
 
-function registrarUsuario(lista_usuarios) {
+function registrarUsuario() {
     let nombre = document.getElementById('nombre').value;
     let correo = document.getElementById('correo').value;
     let direccion = document.getElementById('direccion').value;
@@ -26,7 +26,7 @@ function registrarUsuario(lista_usuarios) {
     if (confirmarContrasena === contrasena) {
     
         // Verificar si el usuario ya existe
-        let usuarioExistente = lista_usuarios.find(function (usuario) {
+        let usuarioExistente = usuarios_registrados.find(function (usuario) {
             return usuario.username === newUsername;
         });
 
@@ -34,7 +34,7 @@ function registrarUsuario(lista_usuarios) {
             alert('El nombre de usuario ya está en uso. Por favor, elige otro.');
         } else {
             // Agregar nuevo usuario al array
-            lista_usuarios.push({
+            usuarios_registrados.push({
                 nombre: nombre,
                 email: correo,
                 direccion: direccion,
