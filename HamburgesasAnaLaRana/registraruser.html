@@ -6,6 +6,7 @@
     <meta name="description" content="Registro de Usuario">
     <title>Registro de Usuario</title>
     <link rel="stylesheet" href="estilos.css">
+    <script src="C:\Users\Usuario\Documents\GITHUB2\proyecto_final_IH\HamburgesasAnaLaRana\mi_script.js"></script>
 </head>
 
 <body>
@@ -44,6 +45,14 @@
     <footer>
         <p>¿Tiene alguna pregunta? Llame al siguiente número: 666 666 666</p>
     </footer>
+    <script>
+        document.getElementById('registro-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Evita que el formulario se envíe de manera convencional
+
+            // Llama a la función registrarUsuario
+            registrarUsuario();
+        });
+    </script>
 </body>
 
 </html>
