@@ -9,7 +9,7 @@ function iniciarSesion() {
     let contrasena = document.getElementById('contrasena').value;
 
     // Obtener el usuario registrado desde localStorage
-    let usuarioRegistrado = JSON.parse(localStorage.getItem('usuarioActual'));
+    let usuarioRegistrado = JSON.parse(localStorage.getItem('usuarios_registrados'));
 
     if (usuarioRegistrado && usuarioRegistrado.contrasena === contrasena && usuarioRegistrado.nombre === nombre) {
         alert('¡Inicio de sesión exitoso!');
@@ -47,7 +47,7 @@ function registrarUsuario() {
             };
 
             // Guardar el nuevo usuario en localStorage
-            localStorage.setItem('usuarioActual', JSON.stringify(nuevoUsuario));
+            localStorage.setItem('usuarios_registrados', JSON.stringify(nuevoUsuario));
 
             alert('¡Registro exitoso!');
             window.location.href = 'index.html';
@@ -91,18 +91,18 @@ function obtenerValorSeleccionado(nombreGrupo) {
 }
 
 function añadir_al_carrito_combo() {
+    alert("Añadiendo al carrito...");
+
     // Obtiene el combo seleccionado
     let comboSeleccionado = document.querySelector('input[name="combo_nombre"]:checked');
-
     // Verifica si se ha seleccionado algún combo
-    if (comboSeleccionado) {
+    if (comboSeleccionado){
         // Crea un diccionario con los elementos del combo seleccionado
         let pedidoCombo = {
             combo_nombre: comboSeleccionado.value,
             combo_detalle: obtenerDetalleCombo(comboSeleccionado.value),
-            comentarios: document.querySelector('textarea[name="comentarios"]').value
         };
-
+        alert("he entrado en el if")
         // Recupera el carrito de pedidos existente o crea uno nuevo si no existe
         let carrito = JSON.parse(localStorage.getItem('carrito_pedidos')) || [];
 
@@ -115,9 +115,11 @@ function añadir_al_carrito_combo() {
 
         // Redirige a la página index_conuser.html
         window.location.href = 'index_conuser.html';
-    } else {
-        alert('Por favor, selecciona un combo antes de añadir al carrito.');
     }
+    else {
+        alert('Por favor, selecciona un combo.');
+    }
+
 }
 
 // Función auxiliar para obtener el detalle del combo según el nombre del combo
