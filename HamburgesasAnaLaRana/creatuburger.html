@@ -12,7 +12,7 @@
 <body>
     <h1 id = "creatuburger">Crea tu propia Hamburguesa</h1>
     <p id = "comentario-box">Todas las hamburguesas personalizadas valen 12.99€</p>
-    <form id = "pedidoForm">
+    <form id = "pedidoForm" onsubmit="return añadir_aL_carrito_burger()">
 
         <fieldset>
             <legend>Masa</legend>
@@ -120,17 +120,10 @@
             <textarea name="comentarios" rows="10" cols="30"></textarea>
         </fieldset>
 
-        <input type="submit" value="Enviar">
+        <button id = "enviarBtn" type = "submit"> Enviar </button>
     </form>
 
     <footer>
         <p>¿Tiene alguna pregunta? Llame al siguiente número: 666 666 666</p>
     </footer>
-    <script>
-        document.getElementById('pedidoForm').addEventListener('submit', function (event) {
-            event.preventDefault(); // Evita que el formulario se envíe de manera convencional
-            alert("Pedido enviado al carrito"); // Agregamos un log para verificar que se está ejecutando este código
-            añadir_al_carrito();
-        });
-    </script>
 </body>

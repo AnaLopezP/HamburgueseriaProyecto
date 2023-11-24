@@ -154,7 +154,7 @@ function obtenerIngredientesSeleccionados() {
 
 
 // Función para añadir al carrito las hamburguesas personalizadas
-function añadir_al_carrito() {
+function añadir_al_carrito_burger() {
     alert("Pedido enviado al carrito...");
 
     // Crea un diccionario con los elementos seleccionados
