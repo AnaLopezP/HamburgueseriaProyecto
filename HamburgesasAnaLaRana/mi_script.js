@@ -62,7 +62,8 @@ function añadir_al_carrito_menu(){
         burger: obtenerValorSeleccionado('burger'),
         bebida: obtenerValorSeleccionado('bebida'),
         postre: obtenerValorSeleccionado('postre'),
-        comentarios: document.querySelector('textarea[name="comentarios"]').value
+        comentarios: document.querySelector('textarea[name="comentarios"]').value,
+        precio: 12.50
     };
 
     // Recupera el carrito de pedidos existente o crea uno nuevo si no existe
@@ -101,6 +102,7 @@ function añadir_al_carrito_combo() {
         let pedidoCombo = {
             combo_nombre: comboSeleccionado.value,
             combo_detalle: obtenerDetalleCombo(comboSeleccionado.value),
+            precio: 14.50
         };
         alert("he entrado en el if")
         // Recupera el carrito de pedidos existente o crea uno nuevo si no existe
@@ -167,7 +169,8 @@ function añadir_al_carrito_burger() {
         presentacion: obtenerValorSeleccionado('presentacion'),
         bebida: obtenerValorSeleccionado('bebida'),
         postre: obtenerValorSeleccionado('postre'),
-        comentarios: document.querySelector('textarea[name="comentarios"]').value
+        comentarios: document.querySelector('textarea[name="comentarios"]').value,
+        postre: 15
     };
 
     // Recupera el carrito de pedidos existente o crea uno nuevo si no existe

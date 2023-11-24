@@ -373,20 +373,29 @@ h1 {
 
 /*Estilos para el carrito*/
 
+#mainCARRITO {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
 section#carrito {
     background-color: #ffffff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex-basis: 40%; /* Aumentamos el ancho al 40% del espacio disponible en el contenedor principal */
 }
 
 section#carrito h2 {
     color: rgb(0, 0, 0);
-    margin-bottom: 20px;
+    margin-bottom: 10px; /* Reducimos el margen inferior del título */
+    font-size: 24px; /* Reducimos el tamaño del texto */
 }
 
 ul#lista-pedidos {
     list-style: none;
+    padding: 0; /* Quitamos el relleno del ul para evitar un espacio adicional */
 }
 
 #total {
