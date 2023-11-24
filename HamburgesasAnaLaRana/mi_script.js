@@ -141,3 +141,44 @@ function obtenerDetalleCombo(nombreCombo) {
             return [];
     }
 }
+
+// Función para obtener los ingredientes seleccionados (checkbox)
+function obtenerIngredientesSeleccionados() {
+    let ingredientesSeleccionados = [];
+    let checkboxes = document.querySelectorAll('input[name^="ingredientes_"]:checked');
+    checkboxes.forEach(function (checkbox) {
+        ingredientesSeleccionados.push(checkbox.value);
+    });
+    return ingredientesSeleccionados;
+}
+
+
+// Función para añadir al carrito las hamburguesas personalizadas
+function añadir_al_carrito() {
+    alert("Pedido enviado al carrito...");
+
+    // Crea un diccionario con los elementos seleccionados
+    let pedido = {
+        masa: obtenerValorSeleccionado('pan'),
+        salsa: obtenerValorSeleccionado('salsa'),
+        ingredientes: obtenerIngredientesSeleccionados(),
+        tecnica: obtenerValorSeleccionado('tecnica'),
+        presentacion: obtenerValorSeleccionado('presentacion'),
+        bebida: obtenerValorSeleccionado('bebida'),
+        postre: obtenerValorSeleccionado('postre'),
+        comentarios: document.querySelector('textarea[name="comentarios"]').value
+    };
+
+    // Recupera el carrito de pedidos existente o crea uno nuevo si no existe
+    let carrito = JSON.parse(localStorage.getItem('carrito_pedidos')) || [];
+
+    // Agrega el nuevo pedido al carrito
+    carrito.push(pedido);
+
+    // Guarda el carrito actualizado en el localStorage
+    localStorage.setItem('carrito_pedidos', JSON.stringify(carrito));
+    alert('Hamburguesa personalizada añadida al carrito.');
+
+    // Redirige a la página index_conuser.html
+    window.location.href = 'index_conuser.html';
+}
