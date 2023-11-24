@@ -14,6 +14,7 @@ function iniciarSesion() {
     if (usuarioRegistrado && usuarioRegistrado.contrasena === contrasena && usuarioRegistrado.nombre === nombre) {
         alert('¡Inicio de sesión exitoso!');
         window.location.href = 'index_conuser.html';
+        alert('Bienvenido ' + usuarioRegistrado.nombre);
     } else {
         alert('Error de inicio de sesión. Verifica tus credenciales.');
     }
@@ -89,21 +90,52 @@ function obtenerValorSeleccionado(nombreGrupo) {
     return null; // En caso de que no haya ninguna opción seleccionada
 }
 
-function añadir_al_carrito_combos() {
-    // Crea un diccionario con los elementos seleccionados
-    let pedido = {
-        combo: obtenerValorSeleccionado('combo_nombre'),
-    };
+function añadir_al_carrito_combo() {
+    // Obtiene el combo seleccionado
+    let comboSeleccionado = document.querySelector('input[name="combo_nombre"]:checked');
 
-    // Recupera el carrito de pedidos existente o crea uno nuevo si no existe
-    let carrito = JSON.parse(localStorage.getItem('carrito_pedidos')) || [];
+    // Verifica si se ha seleccionado algún combo
+    if (comboSeleccionado) {
+        // Crea un diccionario con los elementos del combo seleccionado
+        let pedidoCombo = {
+            combo_nombre: comboSeleccionado.value,
+            combo_detalle: obtenerDetalleCombo(comboSeleccionado.value),
+            comentarios: document.querySelector('textarea[name="comentarios"]').value
+        };
 
-    // Agrega el nuevo pedido al carrito
-    carrito.push(pedido);
+        // Recupera el carrito de pedidos existente o crea uno nuevo si no existe
+        let carrito = JSON.parse(localStorage.getItem('carrito_pedidos')) || [];
 
-    // Guarda el carrito actualizado en el localStorage
-    localStorage.setItem('carrito_pedidos', JSON.stringify(carrito));
-    alert('Pedido de combo añadido al carrito.');
+        // Agrega el nuevo pedido al carrito
+        carrito.push(pedidoCombo);
 
-    window.location.href = 'index_conuser.html';
+        // Guarda el carrito actualizado en el localStorage
+        localStorage.setItem('carrito_pedidos', JSON.stringify(carrito));
+        alert('Combo añadido al carrito.');
+
+        // Redirige a la página index_conuser.html
+        window.location.href = 'index_conuser.html';
+    } else {
+        alert('Por favor, selecciona un combo antes de añadir al carrito.');
+    }
+}
+
+// Función auxiliar para obtener el detalle del combo según el nombre del combo
+function obtenerDetalleCombo(nombreCombo) {
+    switch (nombreCombo) {
+        case 'comboClasico':
+            return ['Hamburguesa: Clásica con Queso', 'Acompañamiento: Patatas Fritas', 'Bebida: Refresco de cola', 'Postre: Helado'];
+        case 'comboVegetariano':
+            return ['Hamburguesa: Vegetariana', 'Acompañamiento: Ensalada', 'Bebida: Té helado', 'Postre: Brownie'];
+        case 'comboDobleCarne':
+            return ['Hamburguesa: Doble Carne completa', 'Acompañamiento: Papas Fritas', 'Bebida: Coca-Cola', 'Postre: Tarta de Manzana'];
+        case 'comboPollo':
+            return ['Hamburguesa: Pollo a la Parrilla', 'Acompañamiento: Anillos de Cebolla', 'Bebida: Limonada', 'Postre: Helado de Vainilla'];
+        case 'comboEspecial':
+            return ['Hamburguesa: Especial de la Casa', 'Acompañamiento: Papas Fritas', 'Bebida: Batido de Chocolate', 'Postre: Tiramisú'];
+        case 'comboPicante':
+            return ['Hamburguesa: Picante con Jalapeños', 'Acompañamiento: Palitos de Zanahoria', 'Bebida: Agua Mineral', 'Postre: Sorbete de Limón'];
+        default:
+            return [];
+    }
 }

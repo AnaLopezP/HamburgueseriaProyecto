@@ -160,6 +160,24 @@ input[type="submit"]:hover {
     text-align: center; /* Centro horizontal del texto */
 }
 
+#enviarBtn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4c7c3b; /* Color verde */
+    color: #fff; /* Texto blanco */
+    border: none;
+    border-radius: 5px; /* Bordes redondos */
+    transition: background-color 0.3s ease;
+}
+
+#enviarBtn:hover {
+    background-color: #333; /* Cambia el color al pasar el ratón por encima */
+}
+
+
 /* Estilos de inicio de sesion */
 #login-box {
     border: 1px solid #ddd;

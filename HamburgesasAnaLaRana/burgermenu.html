@@ -11,7 +11,7 @@
 
 <body>
     <h1 id = "creatucombo">Crea tu menú</h1>
-    <form id = "pedidoForm">
+    <form id = "pedidoForm", onsubmit="return añadir_al_carrito_menu()">
         <fieldset>
             <legend>Entrante</legend>
             <p>Seleccione el entrante que desea:</p>
@@ -83,17 +83,10 @@
             <p>Si tiene algún comentario, escribalo aquí:</p>
             <textarea name="comentarios" rows="10" cols="30"></textarea>
         </fieldset>
-        <input type="submit" value="Enviar">
+        <button id = "enviarBtn" type = "submit"> Enviar </button>
     </form>
 
     <footer>
         <p>¿Tiene alguna pregunta? Llame al siguiente número: 666 666 666</p>
     </footer>
-    <script>
-        document.getElementById('pedidoForm').addEventListener('submit', function (event) {
-            event.preventDefault(); // Evita que el formulario se envíe de manera convencional
-            alert("Pedido enviado al carrito"); // Agregamos un log para verificar que se está ejecutando este código
-            añadir_al_carrito_menu();
-        });
-    </script>
 </body>
