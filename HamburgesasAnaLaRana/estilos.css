@@ -370,3 +370,42 @@ h1 {
     font-size: 64px;
     float: right;
 }
+
+/*Estilos para el carrito*/
+
+section#carrito {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section#carrito h2 {
+    color: rgb(0, 0, 0);
+    margin-bottom: 20px;
+}
+
+ul#lista-pedidos {
+    list-style: none;
+}
+
+#total {
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+button#realizarPedidoBtn {
+    background-color: rgb(0, 146, 70);
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+button#realizarPedidoBtn:hover {
+    background-color: #333;
+}
