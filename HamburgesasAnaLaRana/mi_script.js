@@ -161,6 +161,7 @@ function añadir_al_carrito_burger() {
     let pedido = {
         masa: obtenerValorSeleccionado('pan'),
         salsa: obtenerValorSeleccionado('salsa'),
+        carne: obtenerValorSeleccionado('carne'),
         ingredientes: obtenerIngredientesSeleccionados(),
         tecnica: obtenerValorSeleccionado('tecnica'),
         presentacion: obtenerValorSeleccionado('presentacion'),
