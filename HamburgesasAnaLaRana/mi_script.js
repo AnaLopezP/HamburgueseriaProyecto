@@ -117,13 +117,13 @@ function añadir_al_carrito_combo() {
         localStorage.setItem('carrito_pedidos', JSON.stringify(carrito));
         alert('Combo añadido al carrito.');
 
-        // Redirige a la página index_conuser.html
-        window.location.href = 'index_conuser.html';
+        
     }
     else {
         alert('Por favor, selecciona un combo.');
     }
-
+    // Redirige a la página index_conuser.html
+    window.location.href = 'index_conuser.html';
 }
 
 // Función auxiliar para obtener el detalle del combo según el nombre del combo
@@ -189,7 +189,6 @@ function añadir_al_carrito_burger() {
     // Redirige a la página index_conuser.html
     window.location.href = 'index_conuser.html';
 }
-
 function cargarPedidosEnHTML() {
     // Obtengo la lista de pedidos desde el localStorage
     let listaPedidos = JSON.parse(localStorage.getItem('carrito_pedidos')) || [];
@@ -244,6 +243,7 @@ function cargarPedidosEnHTML() {
     // Actualizo el total mostrando la suma de los precios de los pedidos
     actualizarTotal();
 }
+
 
 // Función auxiliar para actualizar el total
 function actualizarTotal() {
