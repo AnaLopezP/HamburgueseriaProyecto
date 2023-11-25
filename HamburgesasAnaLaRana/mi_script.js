@@ -173,7 +173,7 @@ function añadir_al_carrito_burger() {
         bebida: obtenerValorSeleccionado('bebida'),
         postre: obtenerValorSeleccionado('postre'),
         comentarios: document.querySelector('textarea[name="comentarios"]').value,
-        postre: 15
+        precio: 15
     };
 
     // Recupera el carrito de pedidos existente o crea uno nuevo si no existe
@@ -210,7 +210,8 @@ function cargarPedidosEnHTML() {
         if (pedido.tipo === 'burger') {
             contenidoPedido = `
                 <strong>Tipo de Pedido:</strong> Hamburguesa Personalizada<br>
-                <strong>Burger:</strong> ${pedido.burger}<br>
+                <strong>Carne:</strong> ${pedido.carne}<br>
+                <strong>Ingredientes:</strong> ${pedido.ingredientes}<br>
                 <strong>Bebida:</strong> ${pedido.bebida}<br>
                 <strong>Postre:</strong> ${pedido.postre}<br>
                 <strong>Comentarios:</strong> ${pedido.comentarios}<br>
@@ -220,7 +221,7 @@ function cargarPedidosEnHTML() {
             contenidoPedido = `
                 <strong>Tipo de Pedido:</strong> Combo de Hamburguesa<br>
                 <strong>Combo:</strong> ${pedido.combo_nombre}<br>
-                <strong>Precio:</strong> €${pedido.precio.toFixed(2)}
+                <strong>Precio:</strong> €${pedido.precio}<br>
             `;
         } else if (pedido.tipo === 'menu') {
             contenidoPedido = `
