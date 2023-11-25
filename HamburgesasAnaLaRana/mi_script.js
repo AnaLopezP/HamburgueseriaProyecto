@@ -58,6 +58,7 @@ function registrarUsuario() {
 function añadir_al_carrito_menu(){
      // Crea un diccionario con los elementos seleccionados
     let pedido = {
+        tipo: 'menu',
         entrante: obtenerValorSeleccionado('entrante'),
         burger: obtenerValorSeleccionado('burger'),
         bebida: obtenerValorSeleccionado('bebida'),
@@ -99,7 +100,8 @@ function añadir_al_carrito_combo() {
     // Verifica si se ha seleccionado algún combo
     if (comboSeleccionado){
         // Crea un diccionario con los elementos del combo seleccionado
-        let pedidoCombo = {
+        let pedido = {
+            tipo: 'combo',
             combo_nombre: comboSeleccionado.value,
             combo_detalle: obtenerDetalleCombo(comboSeleccionado.value),
             precio: 14.50
@@ -109,7 +111,7 @@ function añadir_al_carrito_combo() {
         let carrito = JSON.parse(localStorage.getItem('carrito_pedidos')) || [];
 
         // Agrega el nuevo pedido al carrito
-        carrito.push(pedidoCombo);
+        carrito.push(pedido);
 
         // Guarda el carrito actualizado en el localStorage
         localStorage.setItem('carrito_pedidos', JSON.stringify(carrito));
@@ -161,6 +163,7 @@ function añadir_al_carrito_burger() {
 
     // Crea un diccionario con los elementos seleccionados
     let pedido = {
+        tipo: 'burger',
         masa: obtenerValorSeleccionado('pan'),
         salsa: obtenerValorSeleccionado('salsa'),
         carne: obtenerValorSeleccionado('carne'),
@@ -202,15 +205,37 @@ function cargarPedidosEnHTML() {
         // Crea un elemento <li> para mostrar el pedido
         let liElement = document.createElement('li');
 
-        // Construyo el contenido del elemento <li>
-        liElement.innerHTML = `
-            <strong>Entrante:</strong> ${pedido.entrante}<br>
-            <strong>Burger:</strong> ${pedido.burger}<br>
-            <strong>Bebida:</strong> ${pedido.bebida}<br>
-            <strong>Postre:</strong> ${pedido.postre}<br>
-            <strong>Comentarios:</strong> ${pedido.comentarios}<br>
-            <strong>Precio:</strong> €${pedido.precio.toFixed(2)}
-        `;
+        // Construyo el contenido del elemento <li> en base al tipo de pedido
+        let contenidoPedido = '';
+
+        if (pedido.tipo === 'burger') {
+            contenidoPedido = `
+                <strong>Tipo de Pedido:</strong> Hamburguesa Personalizada<br>
+                <strong>Burger:</strong> ${pedido.burger}<br>
+                <strong>Bebida:</strong> ${pedido.bebida}<br>
+                <strong>Postre:</strong> ${pedido.postre}<br>
+                <strong>Comentarios:</strong> ${pedido.comentarios}<br>
+                <strong>Precio:</strong> €${pedido.precio.toFixed(2)}
+            `;
+        } else if (pedido.tipo === 'combo') {
+            contenidoPedido = `
+                <strong>Tipo de Pedido:</strong> Combo de Hamburguesa<br>
+                <strong>Combo:</strong> ${pedido.combo_nombre}<br>
+                <strong>Precio:</strong> €${pedido.precio.toFixed(2)}
+            `;
+        } else if (pedido.tipo === 'menu') {
+            contenidoPedido = `
+                <strong>Tipo de Pedido:</strong> Menú Personalizado<br>
+                <strong>Entrante:</strong> ${pedido.entrante}<br>
+                <strong>Burger:</strong> ${pedido.burger}<br>
+                <strong>Bebida:</strong> ${pedido.bebida}<br>
+                <strong>Postre:</strong> ${pedido.postre}<br>
+                <strong>Comentarios:</strong> ${pedido.comentarios}<br>
+                <strong>Precio:</strong> €${pedido.precio.toFixed(2)}
+            `;
+        }
+
+        liElement.innerHTML = contenidoPedido;
 
         // Agrego el elemento <li> a la lista de pedidos
         listaPedidosElement.appendChild(liElement);
