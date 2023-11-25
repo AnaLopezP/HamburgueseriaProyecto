@@ -418,3 +418,29 @@ button#realizarPedidoBtn {
 button#realizarPedidoBtn:hover {
     background-color: #333;
 }
+
+/* Agrega estilos para la lista de pedidos */
+#lista-pedidos {
+    list-style-type: none; /* Quita los puntos de la lista */
+    padding: 0;
+}
+
+/* Estilos para cada "cajita" de pedido */
+#lista-pedidos li {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+/* Estilos para el contenido dentro de cada "cajita" de pedido */
+#lista-pedidos li strong {
+    font-size: 14px; /* Tamaño de fuente para las etiquetas "strong" dentro de cada pedido */
+}
+
+/* Estilos para el total */
+#total {
+    font-weight: bold;
+    margin-top: 10px;
+}
+

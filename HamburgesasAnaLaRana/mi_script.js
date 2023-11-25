@@ -186,3 +186,43 @@ function añadir_al_carrito_burger() {
     // Redirige a la página index_conuser.html
     window.location.href = 'index_conuser.html';
 }
+
+function cargarPedidosEnHTML() {
+    // Obtengo la lista de pedidos desde el localStorage
+    let listaPedidos = JSON.parse(localStorage.getItem('carrito_pedidos')) || [];
+
+    // Obtengo la referencia al elemento <ul> donde se mostrarán los pedidos
+    let listaPedidosElement = document.getElementById('lista-pedidos');
+
+    // Limpio la lista actual para evitar duplicados
+    listaPedidosElement.innerHTML = '';
+
+    // Itero sobre la lista de pedidos y creo elementos <li> para cada uno
+    listaPedidos.forEach(function (pedido) {
+        // Crea un elemento <li> para mostrar el pedido
+        let liElement = document.createElement('li');
+
+        // Construyo el contenido del elemento <li>
+        liElement.innerHTML = `
+            <strong>Entrante:</strong> ${pedido.entrante}<br>
+            <strong>Burger:</strong> ${pedido.burger}<br>
+            <strong>Bebida:</strong> ${pedido.bebida}<br>
+            <strong>Postre:</strong> ${pedido.postre}<br>
+            <strong>Comentarios:</strong> ${pedido.comentarios}<br>
+            <strong>Precio:</strong> €${pedido.precio.toFixed(2)}
+        `;
+
+        // Agrego el elemento <li> a la lista de pedidos
+        listaPedidosElement.appendChild(liElement);
+    });
+
+    // Actualizo el total mostrando la suma de los precios de los pedidos
+    actualizarTotal();
+}
+
+// Función auxiliar para actualizar el total
+function actualizarTotal() {
+    let listaPedidos = JSON.parse(localStorage.getItem('carrito_pedidos')) || [];
+    let total = listaPedidos.reduce((acumulador, pedido) => acumulador + pedido.precio, 0);
+    document.getElementById('total').textContent = `Total: €${total.toFixed(2)}`;
+}
