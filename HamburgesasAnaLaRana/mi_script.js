@@ -289,3 +289,10 @@ function realizarPedido(){
     window.location.href = 'pedido_realizado.html';
     return false;
 }
+
+function cerrarSesion() {
+    alert('Cerrando sesión...');
+
+    // Redirigir a la página de inicio de sesión o cualquier otra página que desees
+    window.location.href = 'index.html';
+}
