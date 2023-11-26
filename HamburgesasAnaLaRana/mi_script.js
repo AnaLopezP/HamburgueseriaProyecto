@@ -11,13 +11,16 @@ function iniciarSesion() {
     // Obtener el usuario registrado desde localStorage
     let usuarioRegistrado = JSON.parse(localStorage.getItem('usuarios_registrados'));
 
-    if (usuarioRegistrado && usuarioRegistrado.contrasena === contrasena && usuarioRegistrado.nombre === nombre) {
+    let usuarioEncontrado = usuarioRegistrado.find(usuario => usuario.contrasena === contrasena && usuario.nombre === nombre);
+
+    if (usuarioEncontrado) {
         alert('¡Inicio de sesión exitoso!');
         window.location.href = 'index_conuser.html';
-        alert('Bienvenido ' + usuarioRegistrado.nombre);
+        alert('Bienvenido ' + usuarioEncontrado.nombre);
     } else {
         alert('Error de inicio de sesión. Verifica tus credenciales.');
     }
+
 }
 
 function registrarUsuario() {
@@ -45,12 +48,12 @@ function registrarUsuario() {
         localStorage.setItem('usuarios_registrados', JSON.stringify(usuarios_registrados));
 
         alert('¡Registro exitoso!');
-        window.location.replace('index.html');
+        window.location.href = 'index.html';
+        alert('Bienvenido ' + nuevoUsuario.nombre)
     }
     else {
         // Contraseñas no coinciden
         alert("Las contraseñas no coinciden. Por favor, verifica.");
-        return false; // Evitar que el formulario se envíe
     }
     return false;
 }
