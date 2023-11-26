@@ -203,7 +203,7 @@ function cargarPedidosEnHTML() {
     listaPedidosElement.innerHTML = '';
 
     // Itero sobre la lista de pedidos y creo elementos <li> para cada uno
-    listaPedidos.forEach(function (pedido) {
+    listaPedidos.forEach(function (pedido, index) {
         // Crea un elemento <li> para mostrar el pedido
         let liElement = document.createElement('li');
 
@@ -242,8 +242,10 @@ function cargarPedidosEnHTML() {
 
         // Agrego el elemento <li> a la lista de pedidos
         listaPedidosElement.appendChild(liElement);
+
         // Botón de eliminar pedido
         let btnEliminar = document.createElement('button');
+        btnEliminar.className = 'eliminar-btn';
         btnEliminar.textContent = 'Eliminar';
         btnEliminar.addEventListener('click', function () {
             eliminarPedido(index);
@@ -257,7 +259,7 @@ function cargarPedidosEnHTML() {
     });
     // Actualizo el total mostrando la suma de los precios de los pedidos
     actualizarTotal();
-
+    
     };
 
 // Función para eliminar un pedido del carrito
@@ -280,4 +282,10 @@ function actualizarTotal() {
     let listaPedidos = JSON.parse(localStorage.getItem('carrito_pedidos')) || [];
     let total = listaPedidos.reduce((acumulador, pedido) => acumulador + pedido.precio, 0);
     document.getElementById('total').textContent = `Total: €${total.toFixed(2)}`;
+}
+
+function realizarPedido(){
+    localStorage.removeItem('carrito_pedidos');
+    window.location.href = 'pedido_realizado.html';
+    return false;
 }

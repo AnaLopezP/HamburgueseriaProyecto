@@ -404,6 +404,7 @@ ul#lista-pedidos {
     font-weight: bold;
     font-size: 18px;
     margin-top: 20px;
+    
 }
 
 button#realizarPedidoBtn {
@@ -435,11 +436,39 @@ button#realizarPedidoBtn:hover {
     margin-bottom: 10px;
     padding: 10px;
     font-size: 14px;
-    height: 170px; 
+    height: 200px; 
     box-sizing: border-box;
     float: left;
     background-color: rgba(255, 255, 255);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 40%;
 }
 
+/* Estilos específicos para el botón de eliminar */
+.eliminar-btn {
+    background-color: rgb(0, 146, 70);
+    color: #fff;
+    padding: 12px 12px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 5px;
+    float:right;
+}
 
+.eliminar-btn:hover {
+    background-color: #333;
+}
 
+#volverinicio {
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+#volverinicio:hover {
+    color: #333;
+}
