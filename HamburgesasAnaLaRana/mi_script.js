@@ -21,6 +21,7 @@ function iniciarSesion() {
 }
 
 function registrarUsuario() {
+    alert("Registrando usuario...")
     let nombre = document.getElementById('nombre').value;
     let correo = document.getElementById('correo').value;
     let direccion = document.getElementById('direccion').value;
@@ -38,6 +39,7 @@ function registrarUsuario() {
             alert('El nombre de usuario ya está en uso. Por favor, elige otro.');
         } else {
             // Agregar nuevo usuario al array
+            alert("He llgeado hasta aqui")
             let nuevoUsuario = {
                 nombre: nombre,
                 email: correo,

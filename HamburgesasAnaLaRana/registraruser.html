@@ -35,7 +35,7 @@
                 <label for="confirmar_contrasena">Confirmar contraseña:</label>
                 <input type="password" id="confirmar_contrasena" name="confirmar_contrasena" required>
             
-                <button type="button" onclick="registrarUsuario()">Registrarse</button>
+                <button type="submit">Registrarse</button>
             </form>
 
             <p>¿Ya tienes una cuenta? <a href="/home">Inicia sesión</a></p>
@@ -45,14 +45,6 @@
     <footer>
         <p>¿Tiene alguna pregunta? Llame al siguiente número: 666 666 666</p>
     </footer>
-    <script>
-        document.getElementById('registro-form').addEventListener('submit', function (event) {
-            event.preventDefault(); // Evita que el formulario se envíe de manera convencional
-
-            // Llama a la función registrarUsuario
-            registrarUsuario();
-        });
-    </script>
 </body>
 
 </html>
