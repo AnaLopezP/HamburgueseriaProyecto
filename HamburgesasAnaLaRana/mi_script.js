@@ -78,6 +78,7 @@ function añadir_al_carrito_menu(){
     alert('Pedido añadido al carrito.');
 
     window.location.href = 'index_conuser.html';
+    return false;
     };
 
 
@@ -124,6 +125,7 @@ function añadir_al_carrito_combo() {
     }
     // Redirige a la página index_conuser.html
     window.location.href = 'index_conuser.html';
+    return false;
 }
 
 // Función auxiliar para obtener el detalle del combo según el nombre del combo
@@ -188,6 +190,7 @@ function añadir_al_carrito_burger() {
 
     // Redirige a la página index_conuser.html
     window.location.href = 'index_conuser.html';
+    return false;
 }
 function cargarPedidosEnHTML() {
     // Obtengo la lista de pedidos desde el localStorage
