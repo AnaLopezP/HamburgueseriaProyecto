@@ -242,10 +242,36 @@ function cargarPedidosEnHTML() {
 
         // Agrego el elemento <li> a la lista de pedidos
         listaPedidosElement.appendChild(liElement);
-    });
+        // Botón de eliminar pedido
+        let btnEliminar = document.createElement('button');
+        btnEliminar.textContent = 'Eliminar';
+        btnEliminar.addEventListener('click', function () {
+            eliminarPedido(index);
+        });
 
+        // Agrega el botón de eliminar al elemento <li>
+        liElement.appendChild(btnEliminar);
+
+        // Agrego el elemento <li> a la lista de pedidos
+        listaPedidosElement.appendChild(liElement);
+    });
     // Actualizo el total mostrando la suma de los precios de los pedidos
     actualizarTotal();
+
+    };
+
+// Función para eliminar un pedido del carrito
+function eliminarPedido(index) {
+    let listaPedidos = JSON.parse(localStorage.getItem('carrito_pedidos')) || [];
+
+    // Elimina el pedido en el índice proporcionado
+    listaPedidos.splice(index, 1);
+
+    // Guarda la lista actualizada en el localStorage
+    localStorage.setItem('carrito_pedidos', JSON.stringify(listaPedidos));
+
+    // Recarga los pedidos en el HTML
+    cargarPedidosEnHTML();
 }
 
 
