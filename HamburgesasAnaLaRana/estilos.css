@@ -34,6 +34,7 @@ main {
 
 
 section#Menu {
+    width: 100%;
     background-color: #ffffff; /* Fondo blanco para la sección del menú */
     padding: 10px;
     border-radius: 10px; /* Bordes más redondos */
