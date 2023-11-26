@@ -28,34 +28,33 @@ function registrarUsuario() {
     let telefono = document.getElementById('telefono').value;
     let contrasena = document.getElementById('contrasena').value;
     let confirmarContrasena = document.getElementById('confirmar_contrasena').value;
-    if (confirmarContrasena === contrasena) {
     
-        // Verificar si el usuario ya existe
-        let usuarioExistente = usuarios_registrados.find(function (usuario) {
-            return usuario.username === newUsername;
-        });
+    let usuarios_registrados = JSON.parse(localStorage.getItem('usuarios_registrados')) || [];
 
-        if (usuarioExistente) {
-            alert('El nombre de usuario ya está en uso. Por favor, elige otro.');
-        } else {
-            // Agregar nuevo usuario al array
-            alert("He llgeado hasta aqui")
-            let nuevoUsuario = {
-                nombre: nombre,
-                email: correo,
-                direccion: direccion,
-                telefono: telefono,
-                contrasena: contrasena,
-            };
+    if (confirmarContrasena === contrasena) {
+        // Contraseñas coinciden
+        let nuevoUsuario = {
+            nombre: nombre,
+            email: correo,
+            direccion: direccion,
+            telefono: telefono,
+            contrasena: contrasena,
+        };
+        
+        usuarios_registrados.push(nuevoUsuario);
+        localStorage.setItem('usuarios_registrados', JSON.stringify(usuarios_registrados));
 
-            // Guardar el nuevo usuario en localStorage
-            localStorage.setItem('usuarios_registrados', JSON.stringify(nuevoUsuario));
-
-            alert('¡Registro exitoso!');
-            window.location.href = 'index.html';
-        }
+        alert('¡Registro exitoso!');
+        window.location.replace('index.html');
     }
+    else {
+        // Contraseñas no coinciden
+        alert("Las contraseñas no coinciden. Por favor, verifica.");
+        return false; // Evitar que el formulario se envíe
+    }
+    return false;
 }
+
 
 function añadir_al_carrito_menu(){
      // Crea un diccionario con los elementos seleccionados
@@ -109,7 +108,6 @@ function añadir_al_carrito_combo() {
             combo_detalle: obtenerDetalleCombo(comboSeleccionado.value),
             precio: 14.50
         };
-        alert("he entrado en el if")
         // Recupera el carrito de pedidos existente o crea uno nuevo si no existe
         let carrito = JSON.parse(localStorage.getItem('carrito_pedidos')) || [];
 
