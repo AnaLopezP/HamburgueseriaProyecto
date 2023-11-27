@@ -2,7 +2,6 @@ let usuarios_registrados = JSON.parse(localStorage.getItem('usuarios_registrados
 
 
 function iniciarSesion() {
-    alert("Iniciando sesión...")
     
     // Obtener las credenciales del formulario
     let nombre = document.getElementById('nombre').value;
@@ -14,7 +13,6 @@ function iniciarSesion() {
     let usuarioEncontrado = usuarioRegistrado.find(usuario => usuario.contrasena === contrasena && usuario.nombre === nombre);
 
     if (usuarioEncontrado) {
-        alert('¡Inicio de sesión exitoso!');
         window.location.href = 'index_conuser.html';
         alert('Bienvenido ' + usuarioEncontrado.nombre);
     } else {
@@ -24,7 +22,6 @@ function iniciarSesion() {
 }
 
 function registrarUsuario() {
-    alert("Registrando usuario...")
     let nombre = document.getElementById('nombre').value;
     let correo = document.getElementById('correo').value;
     let direccion = document.getElementById('direccion').value;
@@ -49,7 +46,6 @@ function registrarUsuario() {
 
         alert('¡Registro exitoso!');
         window.location.href = 'index.html';
-        alert('Bienvenido ' + nuevoUsuario.nombre)
     }
     else {
         // Contraseñas no coinciden
@@ -98,7 +94,6 @@ function obtenerValorSeleccionado(nombreGrupo) {
 }
 
 function añadir_al_carrito_combo() {
-    alert("Añadiendo al carrito...");
 
     // Obtiene el combo seleccionado
     let comboSeleccionado = document.querySelector('input[name="combo_nombre"]:checked');
@@ -164,7 +159,6 @@ function obtenerIngredientesSeleccionados() {
 
 // Función para añadir al carrito las hamburguesas personalizadas
 function añadir_al_carrito_burger() {
-    alert("Pedido enviado al carrito...");
 
     // Crea un diccionario con los elementos seleccionados
     let pedido = {
