@@ -289,7 +289,5 @@ function realizarPedido(){
 
 function cerrarSesion() {
     alert('Cerrando sesión...');
-
-    // Redirigir a la página de inicio de sesión o cualquier otra página que desees
     window.location.href = 'index.html';
 }
