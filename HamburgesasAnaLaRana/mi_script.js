@@ -51,7 +51,6 @@ function registrarUsuario() {
         // Contraseñas no coinciden
         alert("Las contraseñas no coinciden. Por favor, verifica.");
     }
-    return false;
 }
 
 
