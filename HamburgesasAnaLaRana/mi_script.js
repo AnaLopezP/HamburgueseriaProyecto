@@ -44,9 +44,9 @@ function registrarUsuario() {
         usuarios_registrados.push(nuevoUsuario);
         localStorage.setItem('usuarios_registrados', JSON.stringify(usuarios_registrados));
 
-        
-        window.location.href = 'index.html';
         alert('¡Registro exitoso!');
+        window.location.href = 'index.html';
+        return false;
     }
     else {
         // Contraseñas no coinciden
